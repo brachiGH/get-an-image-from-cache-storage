@@ -1,3 +1,10 @@
+//save to cache
+if (await caches.match(file, {cacheName: name}) == undefined) { // check if exist
+	caches.open(name).then(function(cache) {
+		cache.add(file);
+	});
+}
+
 // get image us an blob:
 
 response = await caches.match('/img/blue-gun.png', {cacheName: "91ad77e96829a8274995657954bb5422"});
