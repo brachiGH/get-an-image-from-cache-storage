@@ -1,7 +1,7 @@
 //save to cache
 if (await caches.match(file, {cacheName: name}) == undefined) { // check if exist
 	caches.open(name).then(function(cache) {
-		cache.add(file);
+		cache.add(file).then(function(cache) {console.log("end")});
 	});
 }
 
